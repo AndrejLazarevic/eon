@@ -1,0 +1,19 @@
+{
+  "author": "Andrej Lazarevic",
+  "description": "Automating create/delete profile on EON",
+  "devDependencies": {
+    "cypress": "^7.5.0"
+  },
+  "keywords": [
+    "Cypress",
+    "EON",
+    "Profiles"
+  ],
+  "license": "ISC",
+  "main": "index.js",
+  "name": "EON Profiles",
+  "scripts": {
+    "test": "test"
+  },
+  "version": "1.0.0"
+}
