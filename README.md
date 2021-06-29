@@ -12,3 +12,5 @@ Preduslov je da je broj kreiranih profila manji od 6.
 Preduslov je da je broj kreiranih profila na maksimumu, odnosno 6. 
 - createInvalidAdultProfile.js  - Ovaj test proverava da li nije moguce napraviti adult profil sa netacnim infomacijama vezanim za broj godina (negativan broj). 
 Preduslov je da je broj kreiranih profila manji od 6.
+
+U folderu cypress/videos mozete naci zaseban video pokretanja svakog od ovih testova.
