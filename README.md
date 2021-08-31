@@ -14,5 +14,3 @@ Preduslov je da je broj kreiranih profila na maksimumu, odnosno 6.
 Preduslov je da je broj kreiranih profila manji od 6. (ovaj test vraca gresku posto je moguce napraviti profil sa netacnim infomracijama)
 
 U folderu cypress/videos mozete naci zaseban video pokretanja svakog od ovih testova.
-
-U folderu sql nalazi se resenje drugog zadatka.
