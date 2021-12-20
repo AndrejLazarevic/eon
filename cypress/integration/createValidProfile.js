@@ -4,22 +4,21 @@
 
 import selectors from '../support/selectors.js';  // import all DOM selectors for testing purposes
 import testData from '../support/testData.js';  // import all test data for testing purposes
+import pageActions from '../support/pageActions.js';  // import all predefined page actions for testing purposes
 
 var profNoBefore  // to store no of profiles before new profile creation
 var profNoAfter   // to store no of profiles after new profile creation
 var profName      // to store random name of new profile
 var profType      // to store profile type based on what radio button is checked
 var profCreateAvatar    // to store avatar src of profile we are making
+const actions = new pageActions(); // define actions so we can use them
 
 
 describe('Create a valid new profile', () => {   
     before(() => {    // login with username and pass before the actual test
-        cy.clearCookies().visit('/login').wait(2000)
-        cy.get(selectors.loginInputUser).type(testData.username)
-        cy.get(selectors.loginInputPass).type(testData.password)
-        cy.wait(1000)
-        cy.get(selectors.loginButton).click()
-        cy.wait(2000)
+        actions.clearCookies()
+        actions.visitLogin()
+        actions.login(testData.username, testData.password)
     })
     it('Check if there are between 1 and 5 profiles', () => {    // if there is more than 5 test will fail as it's the max number of profiles 
         cy.get(selectors.profile).should('exist').its('length').should('be.lte', 5).should('be.gt', 0)

@@ -4,15 +4,15 @@
 
 import selectors from '../support/selectors.js';  // import all DOM selectors for testing purposes
 import testData from '../support/testData.js';  // import all test data for testing purposes
+import pageActions from '../support/pageActions.js';  // import all predefined page actions for testing purposes
+
+const actions = new pageActions(); // define actions so we can use them
 
 describe('Try to create adult profile with invalid data for age', () => {   
     before(() => {    // login with username and pass before the actual test
-        cy.clearCookies().visit('/login').wait(2000)
-        cy.get(selectors.loginInputUser).type(testData.username)
-        cy.get(selectors.loginInputPass).type(testData.password)
-        cy.wait(1000)
-        cy.get(selectors.loginButton).click()
-        cy.wait(2000)
+        actions.clearCookies()
+        actions.visitLogin()
+        actions.login(testData.username, testData.password)
     })
     it('Check if there are between 1 and 5 profiles', () => {    // if there is more than 5 test will fail as it's the max number of profiles 
         cy.get(selectors.profile).should('exist').its('length').should('be.lte', 5).should('be.gt', 0)
